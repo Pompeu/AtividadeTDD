@@ -16,7 +16,7 @@ public class Validador {
 	}
 
 	public static boolean validarIntervaloNunmeroMatricula(Integer numero) {
-		if (numero > 190000 && numero <= 210000) {
+		if (numero >= 190000 && numero <= 210000) {
 			return true;
 		}
 		return false;
