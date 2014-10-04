@@ -51,11 +51,11 @@ public class TestesEventos {
 	public void testNomeIsValid() {
 		Pessoa p = new Pessoa();
 		try {
-			p.setNome("Pompeu");
+			p.setNome("Itacir Pompeu");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		assertEquals("Pompeu", p.getNome());
+		assertEquals("Itacir Pompeu", p.getNome());
 	}
 
 	@Test
