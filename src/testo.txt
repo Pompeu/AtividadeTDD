@@ -1,0 +1,4 @@
+O nome não deve conter numero ou ser vasio
+A CPF não deve ser vasio , ter numero de caracteres != 11 ou sequencia repetida
+A matricula deve estar o intervalo 190000 < x <= 210000
+O email não deve ser vasio ou estar fora do padrão ia@net.com.br
