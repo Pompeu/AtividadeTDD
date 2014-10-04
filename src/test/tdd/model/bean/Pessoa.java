@@ -12,17 +12,9 @@ public class Pessoa {
 	}
 
 	public void setNome(String nome) throws Exception {
-		for (char a : nome.toCharArray()) {
-			if (a < 65 || a > 122) {
-				throw new Exception("Nome não pode Conter Numeros");
-			}
-		}
-		if (nome.isEmpty()) {
-			this.nome = null;
-		} else {
+		if (Validador.validarNome(nome)) {
 			this.nome = nome;
 		}
-
 	}
 
 	public String getCpf() {
@@ -30,7 +22,7 @@ public class Pessoa {
 	}
 
 	public void setCpf(String cpf) throws Exception {
-		if (ValidarCPF.validarCPF(cpf)) {
+		if (Validador.validarCPF(cpf)) {
 			this.cpf = cpf;
 		}
 	}
@@ -39,11 +31,9 @@ public class Pessoa {
 		return matricula;
 	}
 
-	public void setMatricula(Integer matricula) throws Exception {
-		if (matricula > 190000 || matricula <= 210000) {
-			throw new Exception("Matricula Fora do Intervalo");
-		}
-		this.matricula = matricula;
+	public void setMatricula(Integer matricula) {
+		if (Validador.validarIntervaloNunmeroMatricula(matricula))
+			this.matricula = matricula;
 	}
 
 	public String getEmail() {
@@ -51,7 +41,7 @@ public class Pessoa {
 	}
 
 	public void setEmail(String email) {
-		if (!email.isEmpty() && email.matches("\\w+@\\w+\\.\\w{2,3}\\.\\w{2}"))
+		if (Validador.validarEmail(email))
 			this.email = email;
 	}
 

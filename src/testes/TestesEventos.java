@@ -38,13 +38,13 @@ public class TestesEventos {
 	@Test
 	public void testnomeIsNotNumeric() {
 		Pessoa p = new Pessoa();
-		String msg = null;
+		
 		try {
 			p.setNome("Pompeu1");
 		} catch (Exception e) {
-			msg = e.getMessage();
+			 e.getMessage();
 		}
-		assertEquals("Nome não pode Conter Numeros", msg);
+		assertEquals(null, p.getNome());
 	}
 
 	@Test
@@ -73,9 +73,9 @@ public class TestesEventos {
 	public void textCPFisCharacterNotNumber() {
 		Pessoa p = new Pessoa();
 		try {
-			p.setCpf("003119201DD");
+			p.setCpf("0031192017AA");
 		} catch (Exception e) {
-			e.getMessage();
+			System.err.println(e.getMessage());
 		}
 		assertEquals(null, p.getCpf());
 	}
@@ -90,36 +90,41 @@ public class TestesEventos {
 		}
 		assertEquals(null, p.getCpf());
 	}
+
 	@Test
-	public void textIntervalOfMatricula(){
+	public void textIntervalOfMatricula() {
 		Pessoa p = new Pessoa();
 		try {
 			p.setMatricula(210001);
 		} catch (Exception e) {
 			e.getMessage();
 		}
-		assertEquals( null,p.getMatricula());
+		assertEquals(null, p.getMatricula());
 	}
+
 	@Test
-	public void textEmailVasio(){
+	public void textEmailVasio() {
 		Pessoa p = new Pessoa();
 		p.setEmail("");
 		assertEquals(null, p.getEmail());
 	}
+
 	@Test
-	public void textEmailInvalidFormat(){
+	public void textEmailInvalidFormat() {
 		Pessoa p = new Pessoa();
 		p.setEmail("pompeu@net.com.br1");
 		assertEquals(null, p.getEmail());
 	}
+
 	@Test
-	public void textEmailInvalidFormat2(){
+	public void textEmailInvalidFormat2() {
 		Pessoa p = new Pessoa();
 		p.setEmail("pompeu@net.com3.br1");
 		assertEquals(null, p.getEmail());
 	}
+
 	@Test
-	public void textEmailInvalidFormat3(){
+	public void textEmailInvalidFormat3() {
 		Pessoa p = new Pessoa();
 		p.setEmail("pompeu#net.com.br");
 		assertEquals(null, p.getEmail());
