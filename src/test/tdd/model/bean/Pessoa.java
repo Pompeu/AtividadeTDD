@@ -30,7 +30,7 @@ public class Pessoa {
 	}
 
 	public void setCpf(String cpf) throws Exception {
-		if(ValidarCPF.validarCPF(cpf)){
+		if (ValidarCPF.validarCPF(cpf)) {
 			this.cpf = cpf;
 		}
 	}
